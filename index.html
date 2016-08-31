@@ -3,8 +3,6 @@
 	* {
 		margin: 0;
 		padding: 0;
-		box-sizing: border-box;
-		display:inline-block
 	}
 
 	body{
@@ -22,11 +20,20 @@
 		text-align:center;
 	}
 
+	footer {
+		text-align:center;
+		color:#DDD;
+	}
+
 	.thumbnail{
 		border-color: #8EF1FA;
 		border-style:solid;
+		border-size:1px;
 		width: 350px;
 		height: 300px;
+		text-align:center;
+		display:inline-block;
+		margin: 10px 10px 10px 10px;
 	}
 
 </style>
@@ -42,7 +49,7 @@
 	</header>
 
 	<body>
-	<h2> have a look at my cool projects</h2>
+	<h2> have a look at some of my cool projects</h2>
 	<div class="wrapper">
 		<a class="thumbnail" href="http://codepen.io/Zaizai/full/mEPygM/">
 			<img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/pomodoro-thumbnail.png">
@@ -53,20 +60,19 @@
 			Javascript calculator
 		</a>
 	</div>
-	<br>
-	<div class="thumbnail">
-		<a href="http://codepen.io/Zaizai/full/yOROJK/">
+	<div class="wrapper">
+		<a class="thumbnail" href="http://codepen.io/Zaizai/full/yOROJK/">
 			<img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/wikisearch+thumbnail.png">
 			WikiSearch
 		</a>
-	</div>
-	<div class="thumbnail">
-		<a href="http://codepen.io/Zaizai/full/wGEpEz/">
+		<a class="thumbnail" href="http://codepen.io/Zaizai/full/wGEpEz/">
 			<img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/Weather+thumbnail.png">
 			Weather app
 		</a>
 	</div>
+	<br>
 	</body>
-
-
+<footer>
+developped by <a href='https://github.com/Zaizai56'>Zaizai</a>
+</footer>
 </html>
