@@ -4,8 +4,8 @@
   <style>
   .profile_pic {
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
   }
 
   .backgrd {
@@ -49,6 +49,7 @@
 
   header {
     background: #f5b335;
+    font-size:25px;
     text-align: center;
     position: fixed;
     top: 0;
@@ -94,7 +95,7 @@
   }
 
   #bio {
-    font-size:20px;
+    font-size:16px;
     background-color:#ddd0c0;
     padding-top: 50px;
   }
@@ -192,11 +193,13 @@
       <div class="row container-fluid">
         <div id="bio" class="well col-md-8 col-md-offset-2">
           <div class="col-md-8">
-            <p>I am a passionated full stack developper</p>
-            <p>Making my path through the massive learning of front-end development within the FreeCodeCamp experience.</p>
+			<p>Hello, I am Isaie.<hr>
+			I am a project engineer. I have a passion for development and I want to become a web developper.<br>
+			I am a student at FreeCodeCamp, where I learn full stack development.<br>
+			Have a look at my cool projects.</p>
           </div>
           <div class="col-md-4">
-            <img class="profile_pic img-responsive" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/mystery-man-300x231.jpg">
+            <img class="profile_pic img-responsive" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/profile_pic.png">
           </div>
         </div>
         <div id="portfolio" class="col-md-8 col-md-offset-2 well">
@@ -295,7 +298,6 @@
         return;
 
       // If they scrolled down and are past the navbar, add class .nav-up.
-      // This is necessary so you never see what is "behind" the navbar.
       if (st > lastScrollTop && st > navbarHeight) {
         // Scroll Down
         $('header').removeClass('nav-down').addClass('nav-up');
@@ -321,13 +323,13 @@
 
     $("#btn-portfolio").click(function() {
       $('html, body').animate({
-        scrollTop: $("#portfolio").offset().top
+        scrollTop: $("#portfolio").offset().top - 100
       }, 1000);
     });
 
     $("#btn-contact").click(function() {
       $('html, body').animate({
-        scrollTop: $("#contact").offset().top
+        scrollTop: $("#contact").offset().top - 100
       }, 1000);
     });
   </script>
