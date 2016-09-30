@@ -25,6 +25,7 @@
     box-shadow: none;
     border-radius: 5px;
     margin-bottom: 10px;
+    padding-left: 10px;
   }
 
   textarea {
@@ -34,6 +35,7 @@
     width: 100%;
     font-family: sans-serif;
     font-size: 15px !important;
+    padding-left: 10px;
     appearance: none;
     border-radius: 5px;
     resize: none;
@@ -86,8 +88,9 @@
 
   #bio {
     font-size:16px;
-    background-color:#ddd0c0;
-    padding-top: 50px;
+    background-color:#DDDDDD;
+    padding-top: 10px;
+    text-align: justify;
   }
 
   #portfolio{
@@ -96,6 +99,7 @@
 
   #contact{
     margin-top:-25px;
+    background: #f5b335; 
   }
 
   .contact-comment{
@@ -138,8 +142,8 @@
   }
 
   input[type=submit] {
-  color: white;
-  background-color: #f5b335;
+  background-color: white;
+  color: #f5b335;
   display: inline-block;
   border: 0;
   font-size: 14px;
@@ -178,7 +182,7 @@
           <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/Zaizai.png" class="social-thmb">
         </div>
         <div class="col-md-10 col-xs-10">
-          <h1>Web development</h1>
+          <h1>Full-stack web development</h1>
         </div>
       </div>
       <div class="row">
@@ -196,20 +200,40 @@
     </header>
     <div class="container-fluid backgrd">
       <div class="row container-fluid">
-        <div id="bio" class="well col-md-8 col-md-offset-2">
-          <div class="col-md-8">
-			<p>I am Isaie.<hr>
-			I am a project engineer and codenewbie.<br>
-			My area is industrial engineering, and I have more than 5 years of experience in multinational companies. I always loved getting involved in coding related topics in the past years. So I realized it was about time to get out of the confort zone. I spend most of my spare time coding in the past 6 months.
-      I started learning full stack webdevelopment with FreeCodeCamp in may 2016.<br>
-
-			Have a look below at the projects developped as part of my learning.</p>
+        <div id="bio" class="well col-md-10 col-md-offset-1">
+          <div class="col-md-9">
+			<p>I am <b>Isaie</b>.<br>
+			I am a <b>project engineer</b> and codenewbie.<br>
+			My area is industrial engineering, and I have more than 5 years of experience in multinational companies. I always felt enthusiastic about any project involving development. So I decided it was about time to get out of the confort zone. For the past 6 months, I spent most of my free time learning and practicing.
+      <br>
+      I have developped web application using different languages and frameworks, including: <b>HTML</b>, <b>CSS</b>, <b>SASS</b>, <b>Javascript</b>, <b>Jquery</b>, <b>Reactjs</b>, <b>Nodejs</b>, <b>Expressjs</b> and <b>MongoDB</b>.
+      Not that I master all these tools, I used them in the development of 10+ projects.</p>
           </div>
-          <div class="col-md-4 profile-div">
+          <div class="col-md-3 profile-div">
             <img class="profile_pic" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/profile_pic.png">
           </div>
         </div>
-        <div id="portfolio" class="col-md-8 col-md-offset-2 well">
+        <div id="portfolio" class="col-md-10 col-md-offset-1 well">
+        <div class="col-md-6">
+            <a class="thumbnail" href="http://ur-voice.herokuapp.com/">
+              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/yourVoice+thumbnail.png">YourVoice - nodejs, expressjs, mongoDB
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
+              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/where-u-go-thumbnail.png">whereugo - nodejs, expressjs, mongoDB, YELP api
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
+              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/Markdown-pvw-thumbnail.png">Markdown Previewer - reactjs
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
+              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/FCC-Leaderboard-thumbnail.png">FCC Leaderboard - reactjs
+            </a>
+          </div>
           <div class="col-md-6">
             <a class="thumbnail" href="http://codepen.io/Zaizai/full/PzNeEp/">
               <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/javascript+thumbnail.png">Javascript calculator - jquery, CSS, HTML
@@ -240,18 +264,8 @@
               <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/tic-tac-toe-thumbnail.png">Tic Tac Toe - Vanilla Javascript, AI
             </a>
           </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://ur-voice.herokuapp.com/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/yourVoice+thumbnail.png">YourVoice - nodejs, expressjs, mongoDB
-            </a>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/where-u-go-thumbnail.png">whereugo - nodejs, expressjs, mongoDB, YELP api
-            </a>
-          </div>
         </div>
-        <div id="contact" class="col-md-8 col-md-offset-2 well">
+        <div id="contact" class="col-md-10 col-md-offset-1 well">
           <h4 align="center">- Contact me -</h4>
           <div class="col-md-6">
             <form action="https://formspree.io/isaie.courilleau@gmail.com" method="POST">
@@ -267,7 +281,7 @@
             Give me a shout !
           </div>
         </div>
-        <div class="about col-md-8 col-md-offset-2 well">
+        <div class="about col-md-10 col-md-offset-1 well">
           <div class="col-md-6" align="middle">
             <h4>About this page</h4>
             <br>
