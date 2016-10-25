@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 
 <html>
-  <style>
+<style>
   .profile_pic {
     border-radius: 50%;
     height: 200px;
     width: 200px;
     display:inline-block;
+    margin: 30px;
   }
 
   .backgrd {
-    padding-top: 110px;
-    background-color: #EEE;
+    padding-top: 100px;
+  }
+
+  h1 {
+    text-align:center;
+    font-family: 'Amaranth', sans-serif;
   }
 
   input[type="text"] {
-    display: block;
+    display: inline-block;
     border: none;
     margin: 0;
-    width: 100%;
+    width: 400px;
     font-family: sans-serif;
     font-size: 15px;
     appearance: none;
@@ -29,16 +34,39 @@
   }
 
   textarea {
-    display: block;
+    display: inline-block;
     border: none;
     margin: 0;
-    width: 100%;
+    width: 400px;
     font-family: sans-serif;
     font-size: 15px !important;
     padding-left: 10px;
     appearance: none;
     border-radius: 5px;
     resize: none;
+  }
+
+  input[type=submit] {
+    background-color: white;
+    color: #f5b335;
+    display: inline-block;
+    border: 0;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 10px 5px;
+    width: 100px;
+    font-weight: 500;
+  }
+
+  input[type=submit]:focus {  /* Remove outline when hovering over button */
+    outline: none;
+  }
+
+  input[type=submit]:active { /* Scale the button down by 10% when clicking on button */
+    transform: scale(0.9, 0.9);
+    -webkit-transform: scale(0.9, 0.9);
+    -moz-transform: scale(0.9, 0.9);
   }
 
   button {
@@ -53,53 +81,58 @@
   header {
     background: #f5b335;
     text-align: center;
-    margin-left:-10px;
     position: fixed;
     top: 0;
     z-index: 1;
     transition: top 0.2s ease-in-out;
     width: 100%;
     box-shadow: 0 1px #888;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 30px;
   }
-
 
   footer {
     box-shadow: 0px 0px 2px #888;
     background-color: #f5b335;
-    width: 100vw;
+    width: 100%;
     height: 60px;
+    padding-top: 20px;
     text-align: center;
   }
 
   .thumbnail {
-    text-align: center;
-  }
-
-  .thumbnail > img {
     border-style: solid;
-    border-color: #222;
-    border-size:1px;
+    border-color: #f5b335;
+    border-size:2px;
+    text-align: center;
   }
 
   .about {
     background-color:#DED;
-    margin-top:-20px;
+    padding-top: 25px;
   }
 
   #bio {
     font-size:16px;
-    background-color:#DDDDDD;
-    padding-top: 10px;
-    text-align: justify;
+    text-align: center;
+    line-height:150%;
+    height: 100vh;
   }
 
-  #portfolio{
-    margin-top:-25px;
+  #projects{
+    text-align: center;
+    vertical-align: middle;
+    height: 100vh;
   }
 
   #contact{
-    margin-top:-25px;
-    background: #f5b335; 
+    padding-bottom:20px;
+    background: #f5b335;
+    text-align: center;
+  }
+
+  .projectList {
+    margin-top: 100px;
   }
 
   .contact-comment{
@@ -119,8 +152,7 @@
 
   .btn-header {
     color:#FFF;
-    font-size:15px;
-    height:25px;
+    height: auto;
     font-family: sans-serif;
     background: none;
     border: none;
@@ -130,7 +162,27 @@
   .btn-header:hover {
     color:black;
     background-color: #EEE;
+    -webkit-transition: all 0.4s ease;
   }
+
+  .btn-nav {
+    font-family: sans-serif;
+    background: none;
+    border: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    border-color: #f5b335;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 15px 15px 15px;
+  }  
+
+  .btn-nav:hover {
+    background-color: #f5b335;
+    -webkit-transition: all 0.4s ease;
+  }  
 
   .social-thmb {
     margin: 10px 10px 10px 10px;
@@ -140,202 +192,259 @@
   .profile-div{
     text-align: center;
   }
-
-  input[type=submit] {
-  background-color: white;
-  color: #f5b335;
-  display: inline-block;
-  border: 0;
-  font-size: 14px;
-  border-radius: 3px;
-  margin-top: 10px;
-  padding: 10px 5px;
-  width: 100px;
-  font-weight: 500;
+  /*slider styling*/
+  #slider {
+    overflow: hidden;
+    margin: 20px auto 0 auto;
+    border-radius: 4px;
+    display: inline-block;
   }
 
-  input[type=submit]:focus {  /* Remove outline when hovering over button */
-    outline: none;
+  #slider ul {
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    list-style: none;
   }
 
-  input[type=submit]:active { /* Scale the button down by 10% when clicking on button */
-    transform: scale(0.9, 0.9);
-    -webkit-transform: scale(0.9, 0.9);
-    -moz-transform: scale(0.9, 0.9);
+  #slider ul li {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    height: 500px;
+    text-align: center;
   }
-  </style>
 
-  <head>
-    <title>Isaie - web developper</title>
-    <link rel="icon" href="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/isaie-favicon.png" /> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <div id="top-hover" class="top-hover">
+  button.control_prev, button.control_next {
+    font-family: sans-serif;
+    background: none;
+    cursor: pointer;
+    background: none;
+    border-color: #f5b335;
+    border: solid;
+    border-width: 2px;
+    border-color: #f5b335;
+    color: #f5b335;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    display:inline-block;
+    vertical-align: top;
+    margin: 200px 30px 0px 30px;
+  }
+
+  button.control_prev:hover, button.control_next:hover {
+    background-color: #f5b335;
+    color: #FFF;
+    -webkit-transition: all 0.4s ease;
+  }
+
+</style>
+
+<head>
+  <title>Isaie - web developper</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/isaie-favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="top-hover" class="top-hover">
+  </div>
+  <header class="nav-down">
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <p>Full-stack web development</p>
+      </div>
+      <button id="btn-bio" class="btn-header col-md-2 col-xs-4">
+        <p>About me</p>
+      </button>
+      <button id="btn-projects" class="btn-header col-md-2 col-xs-4">
+        <p>Projects</p>
+      </button>
+      <button id="btn-contact" class="btn-header col-md-2 col-xs-4">
+        <p>Contact</p>
+      </button>
     </div>
-    <header class="nav-down">
-      <div class="row container">
-        <div class="col-md-2 col-xs-2">
-          <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/Zaizai.png" class="social-thmb">
+  </div>
+</header>
+<div class="container-fluid backgrd">
+  <div class="row container-fluid">
+    <div id="bio" class="">
+      <h1>About me</h1>
+      <img class="profile_pic" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/profile_pic.png">
+      <p>I am <b>Isaie</b>.<br>
+        <br>
+        <b>Project engineer</b> and <b>codenewbie</b>.<br>
+        <br>
+        5 years of sucessfull experience in multinational and industrial companies.<br>
+        <br>
+        I decided it was about time to get out of the confort zone. And explore web development.
+        <br>
+        <b>HTML</b>, <b>CSS</b>, <b>SASS</b>, <b>Javascript</b>, <b>Jquery</b>, <b>Reactjs</b>, <b>Nodejs</b>, <b>Expressjs</b>, <b>MongoDB</b>.<br>
+        Not that I master all these tools, I used them in the development of 10+ projects. Most of them are running live on Heroku or codepen.io</p>
+        <br>
+        <button id="nav-project" class="btn-nav">Projects</button>
+      </div>
+      <div id="projects">
+          <hr>
+          <h1>Projects</h1>
+          <div class="projectList">
+          <button href="#" class="control_prev"><</button>
+          <div id="slider">
+            <ul>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://ur-voice.herokuapp.com/">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/yourVoice+thumbnail.png">YourVoice - nodejs, expressjs, mongoDB
+                  </a>
+                  <p>Create and share poll online with your friends. The application have been built using the boilerplate clementinejs. It was my first project using nodejs. The application use Google graph to render the results.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://where-u-go.herokuapp.com">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/where-u-go-thumbnail.png">whereugo - nodejs, expressjs, mongoDB, YELP api
+                  </a>
+                  <p>Social tool, to find where the mate from your communauty are going. The application use Yelp search API to browse through reviewed locations. The user can indicate where he is going, and see how many people are going.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://where-u-go.herokuapp.com">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/Markdown-pvw-thumbnail.png">Markdown Previewer - reactjs
+                  </a>
+                  <p>Markdown is a useful language to format your text in a glance. This previewer allow you render your content using the power of react.js.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://where-u-go.herokuapp.com">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/FCC-Leaderboard-thumbnail.png">FCC Leaderboard - reactjs
+                  </a>
+                  <p>Short challenge from FreeCodeCamp. The application use a FCC API to get the top campers and render it using react.js. The leaderboard can be dynamically sorted either on the last 30 days or all time.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://codepen.io/Zaizai/full/PzNeEp/">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/javascript+thumbnail.png">Javascript calculator - jquery, CSS, HTML
+                  </a>
+                  <p>Small javascript calculator. I had a lot of fun creating the customs functions for the basic operations (add, multiply, divide, substract). This is one the simplest but also one of my favorite project.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://codepen.io/Zaizai/full/mEPygM/">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/pomodoro-thumbnail.png">Pomodoro Clock - jquery, CSS, HTML
+                  </a>
+                  <p>The Pomodoro clock refers to the Italian tool used to control the cooking time. But in this case, it is a personal efficiency tool. It helps to maximize your concentration by scheduling short break time every X minutes.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://codepen.io/Zaizai/full/yOROJK/">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/wikisearch+thumbnail.png">WikiSearch - jquery, CSS, HTML, wikipedia API
+                  </a>
+                  <p>Small project using Wikipedia API and dynamic CSS animations.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://codepen.io/Zaizai/full/wGEpEz/">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/Weather+thumbnail.png">Weather app - jquery, CSS, HTML
+                  </a>
+                  <p>Return the weather in your location. Pretty acurate, using a weather API that is available wordwide</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://codepen.io/Zaizai/full/YqOKgx/">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/cnq-thumnail.png">Chuck Norris Quote - Jquery, JSON
+                  </a>
+                  <p>It's not a Chuck Norris quote generator. Because nobody can quote Chuck Norris.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a class="thumbnail" href="http://codepen.io/Zaizai/full/dXVxVy">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/tic-tac-toe-thumbnail.png">Tic Tac Toe - Vanilla Javascript, AI
+                  </a>
+                  <p>Tic-Tac-Toe game where you can play against the computer. The AI is pretty basic with a look over the next 2 turns only. Professional Tic-Tac-Toe player better skip this one !</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button href="#" class="control_next">></button>
         </div>
-        <div class="col-md-10 col-xs-10">
-          <h1>Full-stack web development</h1>
+        <button id="nav-contact" class="btn-nav">contact</button>
+      </div>
+      <div id="contact" class="row">
+        <h1>contact me</h1>
+        <div class="col-md-6 col-xs-12">
+          <form action="https://formspree.io/isaie.courilleau@gmail.com" method="POST">
+            <input type="text" placeholder="name" name="name"><br>
+            <input type="text" placeholder="email" name="email"><br>
+            <textarea type="text" placeholder="your message..." name="message" cols="30" rows="10"></textarea><br>
+            <input type="submit" action="send">
+          </form>
+        </div>
+        <div class="col-md-6 col-xs-12 contact-comment">
+          Any advice or request ?<br>
+          Give me a shout !
         </div>
       </div>
-      <div class="row">
-        <button id="btn-bio" class="btn-header col-md-4 col-xs-4">
-          <p>Bio</p>
-        </button>
-        <button id="btn-portfolio" class="btn-header col-md-4 col-xs-4">
-          <p>Portfolio</p>
-        </button>
-        <button id="btn-contact" class="btn-header col-md-4 col-xs-4">
-          <p>Contact</p>
-        </button>
-      </div>
-    </div>
-    </header>
-    <div class="container-fluid backgrd">
-      <div class="row container-fluid">
-        <div id="bio" class="well col-md-10 col-md-offset-1">
-          <div class="col-md-9">
-			<p>I am <b>Isaie</b>.<br>
-			I am a <b>project engineer</b> and codenewbie.<br>
-			My area is industrial engineering, and I have more than 5 years of experience in multinational companies. I always felt enthusiastic about any project involving development. So I decided it was about time to get out of the confort zone. For the past 6 months, I spent most of my free time learning and practicing.
-      <br>
-      I have developped web application using different languages and frameworks, including: <b>HTML</b>, <b>CSS</b>, <b>SASS</b>, <b>Javascript</b>, <b>Jquery</b>, <b>Reactjs</b>, <b>Nodejs</b>, <b>Expressjs</b> and <b>MongoDB</b>.
-      Not that I master all these tools, I used them in the development of 10+ projects. Most of these are running on Heroku or codepen.io</p>
-          </div>
-          <div class="col-md-3 profile-div">
-            <img class="profile_pic" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/profile_pic.png">
-          </div>
+      <div class="about row">
+        <div class="col-md-6" align="middle">
+          <h4>About this page</h4>
+          <br>
+          <p>Made from scratch with &#9835</p>... and perseverance !</p>
         </div>
-        <div id="portfolio" class="col-md-10 col-md-offset-1 well">
-        <div class="col-md-6">
-            <a class="thumbnail" href="http://ur-voice.herokuapp.com/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/yourVoice+thumbnail.png">YourVoice - nodejs, expressjs, mongoDB
-            </a>
-            <p> Create and share poll online with your friends. The application have been built using the boilerplate clementinejs. It was my first project using nodejs. The application use Google graph to render the results</p>
+        <div class="col-md-6" align="middle">
+          <h4>Find me around the web</h4>
+          <br>
+          <div class="col-md-4">
+            <a href="https://www.linkedin.com/in/isa%C3%AFe-courilleau-50503021"><img src="https://s3.ap-northeast-2.amazonaws.com/projects-zaizai/linkedin_circle_black-512.png" class="img-responsive social-thmb"></a>
           </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/where-u-go-thumbnail.png">whereugo - nodejs, expressjs, mongoDB, YELP api
-            </a>
-            <p>Social tool, to find where the mate from your communauty are going. The application use Yelp search API to browse through reviewed locations. The user can indicate where he is going, and see how many people are going.</p>
+          <div class="col-md-4">
+            <a href="https://github.com/Zaizai56"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/25231-github-cat-in-a-circle-icon-vector-icon-vector-eps.png" class="img-responsive social-thmb"></a>
           </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/Markdown-pvw-thumbnail.png">Markdown Previewer - reactjs
-            </a>
-            <p>Markdown is a useful language to format your text in a glance. This previewer allow you render your content using the power of react.js.</p>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://where-u-go.herokuapp.com">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/FCC-Leaderboard-thumbnail.png">FCC Leaderboard - reactjs
-            </a>
-            <p>Short challenge from FreeCodeCamp. The application use a FCC API to get the top campers and render it using react.js. The leaderboard can be dynamically sorted either on the last 30 days or all time.</p>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://codepen.io/Zaizai/full/PzNeEp/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/javascript+thumbnail.png">Javascript calculator - jquery, CSS, HTML
-            </a>
-            <p>Small javascript calculator. I had a lot of fun creating the customs functions for the basic operations (add, multiply, divide, substract). This is one the simplest but also one of my favorite project.</p>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://codepen.io/Zaizai/full/mEPygM/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/pomodoro-thumbnail.png">Pomodoro Clock - jquery, CSS, HTML
-          </a>
-          <p>The Pomodoro clock refers to the Italian tool used to control the cooking time. But in this case, it is a personal efficiency tool. It helps to maximize your concentration by scheduling short break time every X minutes.</p>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://codepen.io/Zaizai/full/yOROJK/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/wikisearch+thumbnail.png">WikiSearch - jquery, CSS, HTML, wikipedia API
-            </a>
-            <p>Small project, using Wikipedia API and dynamic CSS animations.</p>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://codepen.io/Zaizai/full/wGEpEz/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/Weather+thumbnail.png">Weather app - jquery, CSS, HTML
-            </a>
-            <p>Return the weather in your location. Pretty acurate, using a weather API that is available wordwide</p>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://codepen.io/Zaizai/full/YqOKgx/">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/cnq-thumnail.png">Chuck Norris Quote - Jquery, JSON
-            </a>
-          </div>
-          <div class="col-md-6">
-            <a class="thumbnail" href="http://codepen.io/Zaizai/full/dXVxVy">
-              <img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/tic-tac-toe-thumbnail.png">Tic Tac Toe - Vanilla Javascript, AI
-            </a>
-            <p>Tic-Tac-Toe game where you can play against the computer. The AI is pretty basic with a look over the next 2 turns only. Professional Tic-Tac-Toe player better skip this one !
-          </div>
-        </div>
-        <div id="contact" class="col-md-10 col-md-offset-1 well">
-          <h4 align="center">- Contact me -</h4>
-          <div class="col-md-6">
-            <form action="https://formspree.io/isaie.courilleau@gmail.com" method="POST">
-              <input type="text" placeholder="name" name="name">
-              <input type="text" placeholder="email" name="email">
-              <textarea type="text" placeholder="your message..." name="message" cols="30" rows="10">
-              </textarea>
-              <input type="submit" action="send">
-            </form>
-          </div>
-          <div class="col-md-6 contact-comment">
-            Any advice or request ?<br>
-            Give me a shout !
-          </div>
-        </div>
-        <div class="about col-md-10 col-md-offset-1 well">
-          <div class="col-md-6" align="middle">
-            <h4>About this page</h4>
-            <br>
-            <p>Made from scratch with &#9835</p>... and perseverance !</p>
-          </div>
-          <div class="col-md-6" align="middle">
-            <h4>Find me around the web</h4>
-            <br>
-            <div class="col-md-4">
-              <a href="https://www.linkedin.com/in/isa%C3%AFe-courilleau-50503021"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/linkedin_circle_black-512.png" class="img-responsive social-thmb"></a>
-            </div>
-            <div class="col-md-4">
-              <a href="https://github.com/Zaizai56"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/25231-github-cat-in-a-circle-icon-vector-icon-vector-eps.png" class="img-responsive social-thmb"></a>
-            </div>
-            <div class="col-md-4">
-              <a href="https://www.facebook.com/zaizai.norris"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/20673-facebook-circular-logo-icon-vector-icon-vector-eps.png" class="img-responsive social-thmb"></a>
-            </div>
+          <div class="col-md-4">
+            <a href="https://www.facebook.com/zaizai.norris"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/20673-facebook-circular-logo-icon-vector-icon-vector-eps.png" class="img-responsive social-thmb"></a>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <footer>
-      <p>2016 - developped by <a href='https://github.com/Zaizai56'>Zaizai</a></p>
-  </footer>
-  <script type="text/javascript">
+  </div>
+</body>
+<footer>
+  <p>2016 - developped by <a href='https://github.com/Zaizai56'>Zaizai</a></p>
+</footer>
+<script type="text/javascript">
         // Navbar
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 2;
-    var navbarHeight = $('header').outerHeight();
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 2;
+        var navbarHeight = $('header').outerHeight();
 
-    $(window).scroll(function(event) {
-      didScroll = true;
-    });
+        $(window).scroll(function(event) {
+          didScroll = true;
+        });
 
-    setInterval(function() {
-      if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-      }
-    }, 250);
+        setInterval(function() {
+          if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+          }
+        }, 250);
 
-    function hasScrolled() {
-      var st = $(this).scrollTop();
+        function hasScrolled() {
+          var st = $(this).scrollTop();
 
       // Make sure they scroll more than delta
       if (Math.abs(lastScrollTop - st) <= delta)
@@ -361,20 +470,71 @@
 
     $("#btn-bio").click(function() {
       $('html, body').animate({
-        scrollTop: $("#bio").offset().top - 100
+        scrollTop: $("#bio").offset().top - 200
       }, 1000);
     });
 
-    $("#btn-portfolio").click(function() {
+    $("#btn-projects").click(function() {
       $('html, body').animate({
-        scrollTop: $("#portfolio").offset().top - 100
+        scrollTop: $("#projects").offset().top - 100
+      }, 1000);
+    });
+
+    $("#nav-project").click(function() {
+      $('html, body').animate({
+        scrollTop: $("#projects").offset().top
       }, 1000);
     });
 
     $("#btn-contact").click(function() {
       $('html, body').animate({
-        scrollTop: $("#contact").offset().top - 100
+        scrollTop: $("#contact").offset().top -20
       }, 1000);
     });
-  </script>
+
+        $("#nav-contact").click(function() {
+      $('html, body').animate({
+        scrollTop: $("#contact").offset().top
+      }, 1000);
+    });
+
+//gallery slider code from zuraiz (codepen): https://codepen.io/zuraizm/pen/vGDHl
+var slideCount = $('#slider ul li').length;
+var slideWidth = $('#slider ul li').width();
+var slideHeight = $('#slider ul li').height();
+var sliderUlWidth = slideCount * slideWidth;
+
+$('#slider').css({ width: slideWidth, height: slideHeight });
+
+$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+$('#slider ul li:last-child').prependTo('#slider ul');
+
+function moveLeft() {
+  $('#slider ul').animate({
+    left: + slideWidth
+  }, 200, function () {
+    $('#slider ul li:last-child').prependTo('#slider ul');
+    $('#slider ul').css('left', '');
+  });
+};
+
+function moveRight() {
+  $('#slider ul').animate({
+    left: - slideWidth
+  }, 200, function () {
+    $('#slider ul li:first-child').appendTo('#slider ul');
+    $('#slider ul').css('left', '');
+  });
+};
+
+$('button.control_prev').click(function () {
+  moveLeft();
+});
+
+$('button.control_next').click(function () {
+  moveRight();
+});
+
+</script>
 </html>
