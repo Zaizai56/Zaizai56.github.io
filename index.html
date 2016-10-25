@@ -116,13 +116,13 @@
     font-size:16px;
     text-align: center;
     line-height:150%;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   #projects{
     text-align: center;
     vertical-align: middle;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   #contact{
@@ -133,6 +133,7 @@
 
   .projectList {
     margin-top: 100px;
+    height: 500px;
   }
 
   .contact-comment{
@@ -175,7 +176,7 @@
     width: auto;
     height: auto;
     display: inline-block;
-    margin-top: 40px;
+    margin: 40px 0px 20px 0px;
     padding: 15px 15px 15px 15px;
   }  
 
@@ -203,36 +204,40 @@
   #slider ul {
     margin: 0;
     padding: 0;
-    height: 500px;
+    height: 400px;
     list-style: none;
+    position: relative;
   }
 
   #slider ul li {
-    display: inline-block;
+    position: relative;
+    display: block;
     float: left;
     margin: 0;
     padding: 0;
     width: 500px;
-    height: 500px;
+    height: 400px;
     text-align: center;
   }
 
   button.control_prev, button.control_next {
     font-family: sans-serif;
-    background: none;
     cursor: pointer;
     background: none;
+    vertical-align: middle;
     border-color: #f5b335;
     border: solid;
     border-width: 2px;
     border-color: #f5b335;
     color: #f5b335;
-    border-radius: 100px;
+    border-radius: 100%;
     width: 40px;
     height: 40px;
-    display:inline-block;
-    vertical-align: top;
-    margin: 200px 30px 0px 30px;
+    display: inline-block;
+  }
+
+  button.control_prev {
+    margin-right: 400px;
   }
 
   button.control_prev:hover, button.control_next:hover {
@@ -262,7 +267,7 @@
         <p>Full-stack web development</p>
       </div>
       <button id="btn-bio" class="btn-header col-md-2 col-xs-4">
-        <p>About me</p>
+        <p>About</p>
       </button>
       <button id="btn-projects" class="btn-header col-md-2 col-xs-4">
         <p>Projects</p>
@@ -296,6 +301,8 @@
           <h1>Projects</h1>
           <div class="projectList">
           <button href="#" class="control_prev"><</button>
+          <button href="#" class="control_next">></button>
+          <br>
           <div id="slider">
             <ul>
               <li>
@@ -380,7 +387,6 @@
               </li>
             </ul>
           </div>
-          <button href="#" class="control_next">></button>
         </div>
         <button id="nav-contact" class="btn-nav">contact</button>
       </div>
@@ -504,7 +510,7 @@ var slideWidth = $('#slider ul li').width();
 var slideHeight = $('#slider ul li').height();
 var sliderUlWidth = slideCount * slideWidth;
 
-$('#slider').css({ width: slideWidth, height: slideHeight });
+$('#slider').css({width: slideWidth, height: slideHeight });
 
 $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
 
