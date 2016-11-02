@@ -2,18 +2,6 @@
 
 <html>
 <style>
-  .profile_pic {
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    display:inline-block;
-    margin: 30px;
-  }
-
-  .backgrd {
-    padding-top: 100px;
-  }
-
   h1 {
     text-align:center;
     font-family: 'Amaranth', sans-serif;
@@ -21,7 +9,8 @@
 
   input[type="text"] {
     display: inline-block;
-    border: none;
+    border-style: solid;
+    border-color: #f5b335;
     margin: 0;
     width: 400px;
     font-family: sans-serif;
@@ -35,7 +24,8 @@
 
   textarea {
     display: inline-block;
-    border: none;
+    border-color: #f5b335;
+    border-style: solid;
     margin: 0;
     width: 400px;
     font-family: sans-serif;
@@ -47,8 +37,8 @@
   }
 
   input[type=submit] {
-    background-color: white;
-    color: #f5b335;
+    background-color: #f5b335;
+    color: white;
     display: inline-block;
     border: 0;
     font-size: 14px;
@@ -107,6 +97,37 @@
     text-align: center;
   }
 
+  .profile_pic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    margin: 30px;
+  }
+
+  .backgrd {
+    padding-top: 100px;
+  }
+
+  .containerSkills{
+    text-align: justify;
+    line-height: 0;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  .containerSkills::after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+  .skills {
+    height: 150px;
+    display: inline-block;
+  }
+
   .about {
     background-color:#DED;
     padding-top: 25px;
@@ -124,13 +145,13 @@
   #projects{
     text-align: center;
     vertical-align: middle;
+    background: #f5b335;
     min-width: 500px;
     min-height: 100vh;
   }
 
   #contact{
     padding-bottom:20px;
-    background: #f5b335;
     text-align: center;
     min-width: 500px;
   }
@@ -172,20 +193,21 @@
 
   .btn-nav {
     font-family: sans-serif;
-    background: none;
+    background-color: #f5b335;
+    border-color: white;
+    color:white;
     border: solid;
     border-width: 2px;
     border-radius: 2px;
-    border-color: #f5b335;
     width: auto;
     height: auto;
     display: inline-block;
-    margin: 40px 0px 20px 0px;
     padding: 15px 15px 15px 15px;
   }  
 
   .btn-nav:hover {
-    background-color: #f5b335;
+    background-color: white;
+    color: #f5b335;
     -webkit-transition: all 0.4s ease;
   }  
 
@@ -232,8 +254,8 @@
     border-color: #f5b335;
     border: solid;
     border-width: 2px;
-    border-color: #f5b335;
-    color: #f5b335;
+    border-color: white;
+    color: white;
     border-radius: 100%;
     width: 40px;
     height: 40px;
@@ -245,9 +267,47 @@
   }
 
   button.control_prev:hover, button.control_next:hover {
-    background-color: #f5b335;
-    color: #FFF;
+    background-color: white;
+    color: #f5b335;
     -webkit-transition: all 0.4s ease;
+  }
+
+  /*fade in effect for loading*/
+  img {
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+  }
+
+  @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
   }
 
 </style>
@@ -287,22 +347,26 @@
     <div id="bio" class="">
       <img class="profile_pic" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/github+pages/profile_pic.png">
       <p>I am <b>Isaie</b>.<br>
-        <br>
-        <b>Project engineer</b> and <b>codenewbie</b>.<br>
-        <br>
-        5 years of sucessfull experience in multinational and industrial companies.<br>
-        <br>
-        I decided it was about time to get out of the confort zone. And explore web development.
-        <br>
-        <b>HTML</b>, <b>CSS</b>, <b>SASS</b>, <b>Javascript</b>, <b>Jquery</b>, <b>Reactjs</b>, <b>Nodejs</b>, <b>Expressjs</b>, <b>MongoDB</b>.<br>
-        Not that I master all these tools, I used them in the development of 10+ projects. Most of them are running live on Heroku or codepen.io</p>
-        <br>
-        <button id="nav-project" class="btn-nav">Projects</button>
+      <b>Project engineer</b> and <b>codenewbie</b>.<br>
+      <br>
+      5 years of sucessfull experience in multinational and industrial companies.<br>
+      I decided it was about time to get out of the confort zone. And explore web development.
+      <hr>
+      <h3>Skills</h3>
+      <div class="containerSkills">
+        <img class="skills" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/HTML5.png" />
+        <img class="skills" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/CSS3.png" />
+        <img class="skills" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/javascript.png"/ >
+        <img class="skills" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/React-JS.png" />
+        <img class="skills" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/node.png" />
+        <img class="skills" src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/mongodb.png" />
       </div>
-      <div id="projects">
-          <hr>
-          <h1>Projects</h1>
-          <div class="projectList">
+      <button id="nav-project" class="btn-nav">Projects</button>
+    </div>
+    <div id="projects">
+        <hr>
+        <h1>Projects</h1>
+        <div class="projectList">
           <button href="#" class="control_prev"><</button>
           <button href="#" class="control_next">></button>
           <br>
@@ -399,33 +463,21 @@
             </ul>
           </div>
         </div>
-        <button id="nav-contact" class="btn-nav">contact</button>
-      </div>
-      <div id="contact" class="row">
+      <button id="nav-contact" class="btn-nav">contact</button>
+    </div>
+    <div id="contact" class="row">
+      <div class="col-md-6 col-xs-12">
         <h1>contact me</h1>
-        <div class="col-md-6 col-xs-12">
-          <form action="https://formspree.io/isaie.courilleau@gmail.com" method="POST">
-            <input type="text" placeholder="name" name="name"><br>
-            <input type="text" placeholder="email" name="email"><br>
-            <textarea type="text" placeholder="your message..." name="message" cols="30" rows="10"></textarea><br>
-            <input type="submit" action="send">
-          </form>
-        </div>
-        <div class="col-md-6 col-xs-12 contact-comment">
-          Any advice or request ?<br>
-          Give me a shout !
-        </div>
+        <form action="https://formspree.io/isaie.courilleau@gmail.com" method="POST">
+          <input type="text" placeholder="name" name="name"><br>
+          <input type="text" placeholder="email" name="email"><br>
+          <textarea type="text" placeholder="your message..." name="message" cols="30" rows="10"></textarea><br>
+          <input type="submit" action="send">
+        </form>
       </div>
-      <div class="about row">
-        <div class="col-md-6 col-xs-12" align="middle">
-          <h4>About this page</h4>
-          <br>
-          <p>Built from scratch with &#9835</p>... and passion !</p>
-        </div>
-        <div class="col-md-6" align="middle">
-          <h4>Find me around the web</h4>
-          <br>
-          <div class="col-md-4">
+      <div class="col-md-6 col-xs-12 contact-comment">
+        <h1>find me around the web</h1>
+        <div class="col-md-4">
             <a href="http://codepen.io/Zaizai/"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/codepen.png" class="img-responsive social-thmb"></a>
           </div>
           <div class="col-md-4">
@@ -434,8 +486,8 @@
           <div class="col-md-4">
             <a href="https://www.facebook.com/zaizai.norris"><img src="https://s3.ap-northeast-2.amazonaws.com/portfolio-zaizai/facebook.png" class="img-responsive social-thmb"></a>
           </div>
-        </div>
       </div>
+    </div>
     </div>
   </div>
 </body>
